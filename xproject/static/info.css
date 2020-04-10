@@ -1,0 +1,85 @@
+.main{
+    margin-top:30px;
+    background-color:white;
+}
+.shadowx{
+    box-shadow: 0 0 5px rgba(0,0,0,10)
+}
+.img{
+    width:90px;
+    height:90px;
+    margin-top:25px;
+    margin-left:25px;
+    border-radius:5px;
+
+}
+.capimg{
+    width:90%;
+    border-radius:3px;
+
+}
+.img_div{
+    margin-top : 10px;
+    margin-left:10px;
+
+}
+.title{
+    margin-top:20px;
+    margin-left:10px;
+    color: #151515;
+
+}
+.creator{
+    margin-top:-10px;
+    margin-left:10px;
+    color:#FF8000;
+}
+.date{
+    font-size:10px;
+    margin-top:-15px;
+    margin-left:10px;
+    color:#A4A4A4;
+}
+.caption{
+ margin-top:-15px;
+    margin-left:10px;
+    color:grey;
+}
+.hashtags{
+    color:#5F04B4;
+    margin-top:-15px;
+    margin-left:10px;
+    font-size:14px;
+    font-family: Times New Roman;
+}
+.web{
+    font-size:15px;
+}
+.download{
+    margin-top:100px;
+    text-align:center;
+}
+.url{
+    text-align:left;
+   margin-top:20px;
+
+}
+.urlx{
+     margin-top:-20px;
+}
+.des{
+     margin-top:30px;
+}
+.description{
+    text-align:left;
+    margin-left:10px;
+
+}
+.third_div_container{
+    margin-top:20px;
+    border-radius:5px;
+}
+.hashz{
+    border:1px solid #E6E6E6;
+    text-align:center;
+}

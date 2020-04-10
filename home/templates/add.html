@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<h1>create</h1>
+<form method="post" action="{% url 'add' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    Product name:
+</br>
+    <input type="text" name="product_name"/>
+</br>
+        hastags:
+</br>
+    <input type="text" name="hashtags1"/>
+    </br>
+    <br/>
+     hastags:
+</br>
+    <input type="text" name="hashtags2"/>
+    </br>
+     hastags:
+</br>
+    <input type="text" name="hashtags3"/>
+    </br>
+     hastags:
+</br>
+    <input type="text" name="hashtags4"/>
+    </br>
+     hastags:
+</br>
+    <input type="text" name="hashtags5"/>
+    </br>
+         Caption:
+</br>
+    <input type="text" name="caption"/>
+    </br>
+    <br/>
+         icon:
+</br>
+    <input type="file" name="icon"/>
+    </br>
+    <br/>
+           Description:
+</br>
+    <input type="text" name="description"/>
+    </br>
+    <br/>
+     url:
+</br>
+    <input type="text" name="url"/>
+    </br>
+     image:
+</br>
+    <input type="file" name="screenshot"/>
+    </br>
+    <br/>
+     code:
+</br>
+    <input type="file" name="document"/>
+    </br>
+    <br/>
+<input type="submit" class="btn btn-primary" value="Add Product"/>
+
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,174 @@
+p{
+    color:grey;
+}
+
+.creator{
+    color:#58ACFA;
+}
+.main{
+    background-color:#F5F5F5;
+}
+.jumbotron{
+    color:white;
+    text-align:center;
+}
+.lead{
+    color:white;
+}
+.first_div{
+    background-color:white;
+
+
+}
+.search{
+    margin-top:50px;
+
+
+}
+
+.search_input{
+    width:170px;
+    opacity:0px;
+
+}
+.button{
+    border:solid black;
+    border-radius:5px;
+    background-color:black;
+    color:white;
+}
+
+.product_div{
+    background-color: white;
+    cursor:pointer;
+    border-radius:4px;
+    margin-top:30px;
+    height:170px;
+}
+.img{
+    width:100px;
+    height:100px;
+    margin-top:28px;
+    border-radius:5px;
+
+}
+.img_div{
+    width:140px;
+    text-align:center;
+}
+.product_details{
+    margin-left:-6px;
+    margin-top:25px;
+    max-width:500px;
+    height:100px;
+
+}
+.third_div{
+    background-color:#F5F5F5;
+
+}
+.third_div_container{
+     margin-top:40px;
+     font-size:20px;
+     background-color:white;
+
+
+}
+
+.third_div_p {
+    color:white;
+    font-size:23px;
+    background-color:orange;
+}
+.imgthird{
+    width:38px;
+    height:38px;
+    border-radius:100px;
+    margin-top:7px;
+}
+.thirdx{
+    margin-top:15px;
+    cursor:pointer
+
+}
+
+.creat{
+    font-size:11px;
+    margin-top:-15px;
+    margin-left:-10px;
+}
+.top{
+    font-size:16px;
+    margin-left:-15px;
+    color:black;
+
+}
+.up{
+    background-color:orange;
+    width:100%;
+    font-size:10px;
+}
+.top:hover{
+    color:orange;
+}
+.name{
+    font-family:  arial;
+    font-weight:bold;
+    font-size:22px;
+    color: #2E64FE;
+}
+.creator{
+    margin-top:-10px;
+    color:#FF8000;
+}
+.hashtags{
+    font-size:14px;
+    margin-top:-15px;
+    color:#5F04B4;
+}
+.caption{
+    font-family:Candara;
+    margin-top:-16px;
+    color:#6E6E6E;
+
+}
+.upvote{
+    margin-top:-7px;
+    margin-left:9px;
+    color:#FF8000;
+    font-size:13px;
+}
+.date{
+    color:#BDBDBD;
+}
+.date:hover{
+    color:orange;
+}
+.comments{
+    color:#6E6E6E;
+}
+.hashz{
+    border:1px solid #E6E6E6;
+    text-align:center;
+}
+@media only screen and (max-width: 980px) {
+ .caption {
+    max-width:300px;
+     line-height:20px;
+  }
+  .third_div_container{
+    background-color:#F5F5F5;
+    text-align:center;
+
+}
+}
+
+@media only screen and (min-width: 1070px) {
+.pos{
+    position:fixed;
+}
+.write{
+width:300px;
+}
+}
+
