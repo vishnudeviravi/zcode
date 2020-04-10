@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+<div class="main">
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-3 first_div border" >
+<div class="pos">
+            <div class="search col-lg-12">
+                {% if user.is_authenticated %}
+                <h6 class="creator"><a href="{% url 'user' %}">{{user}}</a></h6>
+                {% else %}
+                 <h6 class="creator"> login  </h6>
+                {% endif %}
+                <form method="POST" action="{%url 'search'%}">
+                    {% csrf_token %}
+            <input class="search_input" type="text" name="search">
+            <input type="submit" value="find" class="button">
+                </form>
+                <br/>
+                <hr>
+        </div>
+            <div class="col-lg-12 write ">
+                <h6>what is Zcode?</h6>
+                <p>Zcode is built for collaboration. An online platform which is build for sharing your codes and for working together as a team.
+
+</p>
+            </div>
+</div>
+        </div>
+        <div class="col-lg-7" >
+            <div class="container">
+                <br/>
+                <div class="jumbotron container" style="background-image:url({%static 'images/jumbotron.png'%})">
+  <h1 class="display-4">Code and share with fun</h1>
+  <p class="lead">Lets share your code for building the future</p>
+</div>
+                {% for i in product %}
+                <div class="row border product_div col-xs-12" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                             <p class="upvote">
+                                 <a href="javascript:{document.getElementById('upvote{{i.id}}').submit()}">    upvote {{i.upvote}}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <span class="date">{{i.date}}</span></p>
+                        </div>
+                </div>
+                <form id="upvote{{i.id}}" method="POST" action="{% url 'upvote' i.id %}">
+    {%csrf_token%}
+    <input type="hidden">
+</form>
+                {% endfor %}
+
+                 {% for i in product1 %}
+                <div class="row border product_div" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                            <a> <p class="upvote">upvote {{i.upvote}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="date">{{i.date}}</span></p></a>
+                        </div>
+                </div>
+                {% endfor %}
+
+                 {% for i in product2 %}
+                <div class="row border product_div" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                            <a> <p class="upvote">upvote {{i.upvote}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="date">{{i.date}}</span></p></a>
+                        </div>
+                </div>
+                {% endfor %}
+
+                 {% for i in product3 %}
+                <div class="row border product_div" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                            <a> <p class="upvote">upvote {{i.upvote}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="date">{{i.date}}</span></p></a>
+                        </div>
+                </div>
+                {% endfor %}
+
+                 {% for i in product4 %}
+                <div class="row border product_div" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                            <a> <p class="upvote">upvote {{i.upvote}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="date">{{i.date}}</span></p></a>
+                        </div>
+                </div>
+                {% endfor %}
+
+                 {% for i in product5 %}
+                <div class="row border product_div" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                            <a> <p class="upvote">upvote {{i.upvote}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="date">{{i.date}}</span></p></a>
+                        </div>
+                </div>
+                {% endfor %}
+
+<!--                for user-->
+                  {% for i in product6 %}
+                <div class="row border product_div" onclick="window.location='{%url 'info' i.id %}'" >
+                    <div class="img_div" >
+                        <img src="{{i.icon.url}}" class="img">
+                    </div>
+                        <div class="product_details">
+                            <h5 class="name"> {{i.product_name}}</h5>
+                            <p class="creator"> {{i.creator}}</p>
+                            <p class="hashtags"><span class="hashz">{{i.hash1}}</span>&nbsp;&nbsp;
+                                {% if i.hash2 is not None %}
+                                <span class="hashz">{{i.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash3 is not None %}
+                                <span class="hashz">{{i.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash4 is not None %}
+                                <span class="hashz">{{ i.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if i.hash5 is not None %}
+                                <span class="hashz">{{i.hash5}}</span></p>
+                                {% endif %}
+                            <p class="caption">"{{i.caption}}"</p>
+                            <a> <p class="upvote">upvote {{i.upvote}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="date">{{i.date}}</span></p></a>
+                        </div>
+                </div>
+                {% endfor %}
+<!--                end of user-->
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-2 third_div " >
+            <div class="col-lg-12 third_div_container  ">
+                <p class="third_div_p ">Top of the week</p>
+                {% for p in pro %}
+                <div class="row thirdx" onclick="window.location='{%url 'info' p.id %}'">
+                <div class="col-lg-4">
+                    <img src="{{p.icon.url}}" class="imgthird">
+                </div>
+                <div class="col-lg-6">
+                <p class="top">{{p.product_name}}</p>
+                    <p class="creat">{{p.creator}}</p>
+                </div>
+                </div>
+                {% endfor %}
+        </div>
+
+
+
+
+
+    </div>
+    </div>
+</div>
+{% endblock %}

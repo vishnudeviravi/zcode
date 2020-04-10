@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{%static 'info.css' %}">
+<div class="container main  border shadow ">
+    <div class="row">
+            <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img src="{{info.icon.url}}" class="img">
+                         </div>
+                        <div class="col-xs-6">
+                            <h4 class="title">{{info.product_name}}</h4>
+                            <p class="creator">{{info.creator}}</p>
+                            <p class="date">{{info.date}}</p>
+                            <p class="caption">{{info.caption}}</p>
+                            <p class="hashtags"><span class="hashz">{{info.hash1}}</span>&nbsp;&nbsp;
+                                 {% if info.hash2 is not None %}
+                                <span class="hashz">{{info.hash2}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if info.hash3 is not None %}
+                                <span class="hashz">{{info.hash3}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if info.hash4 is not None %}
+                                <span class="hashz">{{ info.hash4}}</span>&nbsp;&nbsp;
+                                {% endif %}
+                                {% if info.hash5 is not None %}
+                                <span class="hashz">{{info.hash5}}</span></p>
+                                {% endif %}
+                              </p>
+                        </div>
+                     </div>
+            </div>
+        <div class="col-lg-7">
+            <img src="{{info.image.url}}" class="capimg img_div">
+        </div>
+        <div class="col-lg-4 download">
+            <a href="javascript:{document.getElementById('upvote{{info.id}}').submit()}" class="btn btn-danger ">upvote {{info.upvote}}</a>
+
+            <a href="{{info.code.url}}" class="btn btn-primary ">download</a>
+            <div class="col-lg-12 url border">
+                <p class="web">website</p>
+                <a href="{{info.url}}"><p class="urlx">{{info.url}}</p></a>
+            </div>
+              <form id="upvote{{info.id}}" method="POST" action="{% url 'upvote' info.id %}">
+    {%csrf_token%}
+    <input type="hidden">
+</form>
+        </div>
+        <div class="col-lg-7">
+            <hr class="des">
+            <p class="description">{{info.description}}</p>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--{{info.product_name}}-->
+<!--{{info.description}}-->
+<!--{{info.product_name}}-->
+<!--{{info.product_name}}-->
+
+{% endblock %}
